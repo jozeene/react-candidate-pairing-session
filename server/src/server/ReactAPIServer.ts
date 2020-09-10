@@ -4,9 +4,16 @@ import {UserController} from "./UserController";
 export class ReactAPIServer extends Server {
   constructor() {
     super(true);
+    this.setupControllers();
   }
 
   setupControllers() {
+
+    this.app.use((req, res, next) => {
+      console.log('New Request', req.url)
+      next();
+    })
+
     this.addControllers([
       new UserController()
     ]);
