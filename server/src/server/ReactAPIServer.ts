@@ -1,4 +1,5 @@
 import {Server} from "@overnightjs/core";
+import {UserController} from "./UserController";
 
 export class ReactAPIServer extends Server {
   constructor() {
@@ -7,7 +8,7 @@ export class ReactAPIServer extends Server {
 
   setupControllers() {
     this.addControllers([
-
+      new UserController()
     ]);
   }
 
