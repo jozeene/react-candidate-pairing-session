@@ -21,3 +21,5 @@ jspm_packages/
 .cache
 
 package-lock.json
+dist/
+.idea/
