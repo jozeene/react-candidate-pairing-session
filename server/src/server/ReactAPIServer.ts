@@ -1,5 +1,6 @@
 import {Server} from "@overnightjs/core";
 import {UserController} from "./UserController";
+import {PostController} from "./PostController";
 import cors from 'cors';
 
 export class ReactAPIServer extends Server {
@@ -15,11 +16,14 @@ export class ReactAPIServer extends Server {
     this.app.use((req, res, next) => {
       console.log('New Request', req.url)
       next();
-    })
+    });
 
     this.addControllers([
       new UserController()
+    ,
+      new PostController()
     ]);
+
   }
 
   serve(port: number) {

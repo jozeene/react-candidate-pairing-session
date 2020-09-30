@@ -1,17 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, useRouteMatch} from "react-router-dom";
 import {Users} from "./pages/users";
 import {Home} from "./pages/home";
+import {UserDetail} from "./pages/userDetail";
 
 const router = (
   <Router>
     <Switch>
-      <Route path="/users">
+      <Route exact path="/users">
         <Users/>
       </Route>
-      <Route path="/">
+      <Route exact path="/">
         <Home/>
+      </Route>
+      <Route exact path="/users/:userId">
+        <UserDetail/>
       </Route>
     </Switch>
   </Router>

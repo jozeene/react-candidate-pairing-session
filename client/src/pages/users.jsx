@@ -20,6 +20,6 @@ export function Users() {
     <div className='row'>
       {users.map(user => <UserListItem user={user}/>)}
     </div>
-
+    
   </Page>;
 }
