@@ -10,6 +10,9 @@ export class UserController {
     const minimalUsers = UserJSON.map(user => ({
       id: user.id,
       name: user.name,
+      username: user.username,
+      email: user.email,
+      phone: user.phone,
     }));
     res.status(200).json(minimalUsers);
   }
