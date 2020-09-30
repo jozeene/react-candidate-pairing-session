@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch, useRouteMatch} from "react-route
 import {Users} from "./pages/users";
 import {Home} from "./pages/home";
 import {UserDetail} from "./pages/userDetail";
+import {Post} from "./pages/post"
 
 const router = (
   <Router>
@@ -16,6 +17,9 @@ const router = (
       </Route>
       <Route exact path="/users/:userId">
         <UserDetail/>
+      </Route>
+      <Route exact path="/posts/:postId">
+        <Post/>
       </Route>
     </Switch>
   </Router>

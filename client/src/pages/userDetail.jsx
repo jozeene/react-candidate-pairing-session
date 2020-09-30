@@ -31,15 +31,15 @@ export function UserDetail() {
         
         <div style={{ minWidth: '18rem', margin: '1rem', padding: '1rem' }}>
         {error && `${error}`}
-          <h4 className="card-subtitle mb-2 text-muted">ID: {userId}</h4>
+          <h4 className="card-subtitle mb-2 text-muted">{userDetails.name}</h4>
         </div>
-        <div>
-        <p>{userDetails.name}</p>
-        <p>{userDetails.username}</p>
-        <p>{userDetails.email}</p>
-        <p>{userDetails.website}</p>
+        <div style={{ minWidth: '18rem', marginLeft: '1rem', paddingLeft: '1rem' }}>
+    
+        <p className = "card-subtitle mb-2">{`Username: ${userDetails.username}`} </p>
+        <p className = "card-subtitle mb-2">{`Email: ${userDetails.email}`} </p>
+        <p className = "card-subtitle mb-2">{`Website: ${userDetails.address && userDetails.address.street}`} </p>
         </div>
-        <div>
+        <div style={{ minWidth: '18rem', margin: '1rem', padding: '1rem' }}>
           <h2>Posts</h2>
              {postDetails.map(post => <PostItem post={post}/>)}
         </div> 
